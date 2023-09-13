@@ -1,5 +1,6 @@
 import { fastify } from 'fastify'
 import { promptRoutes } from './routes/promptRoutes'
+import { uploadVideoRoute } from './routes/uploadVideo'
 
 const app = fastify()
 
@@ -8,6 +9,7 @@ app.get('/', () => {
 })
 
 app.register(promptRoutes)
+app.register(uploadVideoRoute)
 
 app
   .listen({
