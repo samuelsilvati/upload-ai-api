@@ -13,9 +13,22 @@ GET http://192.168.3.3:3333
 
 # @name create-transcription
 
-POST http://192.168.3.3:3333/videos/bb41687d-7815-43a2-8679-cd250a7e022d/transcription
+POST http://192.168.3.3:3333/videos/5e84e5ba-dd65-468d-abd7-83a3260a6eb8/transcription
 Content-Type: application/json
 
 {
   "prompt": "texto narrativo, romances, novelas, fábulas, narrador, espaço, tempo, enredo"
+}
+
+####
+
+# @name generate-ai-completion
+
+POST http://192.168.3.3:3333/ai/complete
+Content-Type: application/json
+
+{
+  "videoId": "bb41687d-7815-43a2-8679-cd250a7e022d",
+  "temperature": 0.5,
+  "template": "Gere um resumo sucinto da transcrição do vídeo informada a seguir: ''' {transcription}'''"
 }
