@@ -9,3 +9,13 @@ GET http://192.168.3.3:3333/prompts
 GET http://192.168.3.3:3333
 
 
+####
+
+# @name create-transcription
+
+POST http://192.168.3.3:3333/videos/bb41687d-7815-43a2-8679-cd250a7e022d/transcription
+Content-Type: application/json
+
+{
+  "prompt": "texto narrativo, romances, novelas, fábulas, narrador, espaço, tempo, enredo"
+}
