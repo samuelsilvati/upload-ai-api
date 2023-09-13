@@ -1,10 +1,13 @@
 import { fastify } from 'fastify'
+import { promptRoutes } from './routes/promptRoutes'
 
 const app = fastify()
 
 app.get('/', () => {
   return 'Hello World'
 })
+
+app.register(promptRoutes)
 
 app
   .listen({

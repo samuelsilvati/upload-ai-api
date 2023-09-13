@@ -1,1 +1,11 @@
+# @name get-prompts
+
+GET http://192.168.3.3:3333/prompts
+
+###
+
+# @name get-/
+
 GET http://192.168.3.3:3333
+
+
