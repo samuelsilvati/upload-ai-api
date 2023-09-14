@@ -42,7 +42,7 @@ export async function generateAICompletionRoute(app: FastifyInstance) {
 
     streamToResponse(stream, reply.raw, {
       headers: {
-        'Access-Control-Allow-Origin': 'http://localhost:3000',
+        'Access-Control-Allow-Origin': `${process.env.CLIENT_HOST}`,
         'Access-Control-Allow-Methods': 'POST',
       },
     })

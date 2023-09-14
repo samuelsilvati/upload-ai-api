@@ -1,3 +1,4 @@
+import 'dotenv/config'
 import { fastify } from 'fastify'
 import { fastifyCors } from '@fastify/cors'
 import { promptRoutes } from './routes/promptRoutes'
@@ -8,7 +9,7 @@ import { generateAICompletionRoute } from './routes/generateAiCompletions'
 const app = fastify()
 
 app.register(fastifyCors, {
-  origin: 'http://localhost:3000',
+  origin: `${process.env.CLIENT_HOST}`,
 })
 
 app.get('/', () => {
@@ -26,5 +27,5 @@ app
     host: '192.168.3.3',
   })
   .then(() => {
-    console.log('Server running on 192.168.2.3:3333')
+    console.log('Server running on 192.168.3.3:3333')
   })
